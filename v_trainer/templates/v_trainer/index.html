@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Der Vokabeltrainer</title>
+
+	</head>
+
+	<body>
+		<h1>Vokabeltrainer</h1>
+
+		<h2>Willkommen auf der Webseite {{name}}.<br>
+		Ich wünsche dir viel Spaß.</h2>
+
+		{% for wort in deutsche_woerter %}
+			{{ wort }}<br>
+		{% endfor %}<br>
+
+		{% for wort in englische_woerter %}
+			{{ wort }}<br>
+		{% endfor %}
+	</body>
+
+</html>
