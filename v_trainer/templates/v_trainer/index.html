@@ -14,11 +14,17 @@
 		Ich wünsche dir viel Spaß.</h2>
 
 		{% for wort in deutsche_woerter %}
-			{{ wort }}<br>
+    		{{ wort }} (
+				{% for w in wort.list_of_dwords.all %}
+					{{ w }},
+				{% endfor %})<br>
 		{% endfor %}<br>
 
 		{% for wort in englische_woerter %}
-			{{ wort }}<br>
+    		{{ wort }}
+				({% for w in wort.dwort.all %}
+					{{ w }},
+				{% endfor %})<br>
 		{% endfor %}
 	</body>
 
