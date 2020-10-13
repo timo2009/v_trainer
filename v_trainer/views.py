@@ -20,3 +20,8 @@ def deutschtest(request):
     deutschtest_all = DeutschTest.objects.all()
 
     return render(request, 'v_trainer/deutsch_test.html', {"name": "Deutschtest", "deutschtest_all": deutschtest_all})
+
+def test(request):
+    deutsche_woerter = DeutschesWort.objects.all()
+    englische_woerter = EnglischesWort.objects.all()
+    return render(request, 'v_trainer/test.html', {"name": "Test", "deutsche_woerter": deutsche_woerter, "englische_woerter": englische_woerter})

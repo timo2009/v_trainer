@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+Hallo hier ist der Test:-------
+{% for wort in deutsche_woerter %}
+    		{{ wort }} (
+				{% for w in wort.list_of_dwords.all %}
+					{{ w }},
+				{% endfor %})<br>
+		{% endfor %}<br>
+
+		{% for wort in englische_woerter %}
+    		{{ wort }}
+				({% for w in wort.dwort.all %}
+					{{ w }},
+				{% endfor %})<br>
+		{% endfor %}
+	<a href="{% url 'deutschtest' %}"><button>Deutschtest</button></a>
+</body>
+</html>

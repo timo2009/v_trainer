@@ -18,11 +18,14 @@
     <td>{{deutschtest.id}}</td>
     <td>{{deutschtest.user}}</td>
     <td>{{deutschtest.fehler}}</td>
-  </tr>
-   {%endfor%}
 
+  </tr>
+ {% endfor %}
 </table>
-	<a href="{% url 'index' %}"><button>Index</button></a>
+    <a href="{% url 'test' %}"><button>Durchfüren</button></a>
+    <a href="{% url 'index' %}"><button>Index</button></a>
+
+
 
 </body>
 </html>
