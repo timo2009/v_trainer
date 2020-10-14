@@ -5,20 +5,12 @@
     <title>Test</title>
 </head>
 <body>
-Hallo hier ist der Test:-------
-{% for wort in deutsche_woerter %}
-    		{{ wort }} (
-				{% for w in wort.list_of_dwords.all %}
-					{{ w }},
-				{% endfor %})<br>
-		{% endfor %}<br>
+Hallo hier ist der Test:Zurzeit nicht verfügbar...
 
-		{% for wort in englische_woerter %}
-    		{{ wort }}
-				({% for w in wort.dwort.all %}
-					{{ w }},
-				{% endfor %})<br>
-		{% endfor %}
 	<a href="{% url 'deutschtest' %}"><button>Deutschtest</button></a>
+	<a href="http://192.168.178.38:8000/admin/" title="Suchmaschine"target="_blank">
+			Wörter hinzufügen
+		</a>
+
 </body>
 </html>
