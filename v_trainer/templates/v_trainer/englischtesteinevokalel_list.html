@@ -1,0 +1,26 @@
+<h1>Vokalbeltest</h1>
+<ul>
+{% for test in object_list %}
+    <li>{{ test.user }} - {{ test.englisches_wort_1 }} -->
+
+
+
+        {% if test.antwort_englisches_wort_1 == None %}
+            <a href="{% url 'englischtest_1_vokabel_update' test.pk%}">Starte Test</a></li>
+        {% else %}
+            {{ test.antwort_englisches_wort_1 }}
+        {% endif %}
+
+
+
+
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+
+<button class="favorite styled"
+        type="button">
+<a href="{% url 'englischtest_1_vokabel_create' %}">Erstelle neuen Test</a>
+
+</button>
