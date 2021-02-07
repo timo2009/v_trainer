@@ -1,0 +1,10 @@
+ urls.py in vokabeltest:
+
+     path('', views.index, name='index'),
+	 path('deutschtest/', views.deutschtest, name='deutschtest'),
+	 path('test/', views.test, name='test'),
+
+in englischtesteinevokabel_list.html:
+{% empty %}
+
+{% endfor %}

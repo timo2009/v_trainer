@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html>
+{% extends "v_trainer/base.html" %}
 
-	<head>
-		<meta charset="utf-8">
-		<title>Der Vokabeltrainer</title>
+{% block content %}
+<h1>Vokabeltrainer</h1>
 
-	</head>
+<h2>
+    <script>
 
-	<body>
-		<h1>Vokabeltrainer</h1>
+				let name=prompt("Wie heißt du?")
+				document.write("Hallo "+name+". ")
 
-		<h2>Willkommen auf der Webseite {{name}}.<br>
-		Ich wünsche dir viel Spaß.</h2>
+    </script>
+    Willkommen auf der Webseite.<br>
 
-		{% for wort in deutsche_woerter %}
-    		{{ wort }} (
-				{% for w in wort.list_of_dwords.all %}
-					{{ w }},
-				{% endfor %})<br>
-		{% endfor %}<br>
 
-		{% for wort in englische_woerter %}
-    		{{ wort }}
-				({% for w in wort.dwort.all %}
-					{{ w }},
-				{% endfor %})<br>
-		{% endfor %}
-	<a href="{% url 'deutschtest' %}"><button>Deutschtest</button></a>
-	</body>
+    Ich wünsche dir viel Spaß.
+</h2>
+<br><br>
 
-</html>
+Habe noch einen schönen Tag.<br><br><br>
+
+<!--<a href="{% url 'englischtest_1_vokabel_list'%}">Englischtest mit einer Vokabel.</a>-->
+
+<!--<a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list'%}" role="button">Englischtest mit einer Vokabel.</a>-->
+
+{% endblock content %}
+
