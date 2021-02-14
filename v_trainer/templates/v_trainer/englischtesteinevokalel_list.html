@@ -10,10 +10,14 @@
 
         {% if test.antwort_englisches_wort_1 == None %}
 <!--        <a href="{% url 'englischtest_1_vokabel_update' test.pk%}">Starte Test</a>-->
-    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Starte Test</a><br>
+    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Starte Test</a>
 </li>
+
+
     {% else %}
-    {{ test.antwort_englisches_wort_1 }}<br>
+
+    {{ test.antwort_englisches_wort_1 }}
+<!--    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Wiederhole Test</a>-->
 
     {% endif %}
 
@@ -22,9 +26,9 @@
     {% endfor %}
 </ul>
 
-<!--<a type="button" class="btn btn-secondary" href="{% url 'englischtest_1_vokabel_create' %}">-->
-<!--    Erstelle neuen Test-->
-<!--</a>-->
+<!--<a type="button" class="btn btn-secondary" href="{% url 'englischtest_1_vokabel_create' %}">
+    Erstelle neuen Test
+</a>-->
 
 <!--<a class="btn btn-default" href="{% url 'englischtest_1_vokabel_create'%}" role="button">Englischtest mit einer Vokabel.</a>-->
 
