@@ -7,16 +7,18 @@
 <ul>
     {% for test in object_list %}
     <li>{{ test.user }} - {{ test.englisches_wort_1 }} -->
-
         {% if test.antwort_englisches_wort_1 == None %}
 <!--        <a href="{% url 'englischtest_1_vokabel_update' test.pk%}">Starte Test</a>-->
-    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Starte Test</a>
+    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Starte Test</a><br>
+    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_detail' test.pk%}" role="button">Details des Tests</a>
 </li>
 
 
-    {% else %}
+        {% else %}
 
-    {{ test.antwort_englisches_wort_1 }}
+        {{ test.antwort_englisches_wort_1 }}
+
+
 <!--    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Wiederhole Test</a>-->
 
     {% endif %}

@@ -1,0 +1,37 @@
+{% extends "v_trainer/base.html" %}
+
+{% block content %}
+
+
+<hr>
+Welche deutschen Wörter gehören<br>
+zu dem eingegebenen Englischen Wort<br>
+
+--> Mögliche richtige Antworten:
+
+{% for d_wort in all_dwort_list %}
+*
+{{ d_wort }}
+
+{% endfor %}
+
+<br><br>
+
+{% for d_wort in test %}
+*
+{{ d_wort }}
+
+{% endfor %}
+
+<br><br>
+
+Test: {{test}}
+
+
+<h1>ID: {{ object.id }}</h1>
+<p>object: {{ object }}</p>
+<p>englisches_wort_1: {{ object.englisches_wort_1 }}</p>
+<p>Date: {{ now|date }}</p>
+
+
+{% endblock content %}
