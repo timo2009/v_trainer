@@ -6,9 +6,18 @@
 
 <p>Dein Testwort heißt: {{ object.englisches_wort_1 }}</p>
 
+{% if object.antwort_englisches_wort_1 != None %}
+
+<p>Deine Antwort heißt: {{ object.antwort_englisches_wort_1 }}</p>
+{% endif %}
 <ul>
 
+{% if object.antwort_englisches_wort_1 == None %}
+      <li>  <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' object.pk%}" role="button">Starte Test</a>
+    </li>
 
+
+    {% endif %}
 
 </ul>
 
