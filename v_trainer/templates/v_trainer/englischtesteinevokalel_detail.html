@@ -12,20 +12,17 @@
 {% endif %}
 <ul>
 
-{% if object.antwort_englisches_wort_1 == None %}
-      <li>  <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' object.pk%}" role="button">Starte Test</a>
+    {% if object.antwort_englisches_wort_1 == None %}
+    <li><a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' object.pk%}" role="button">Starte
+        Test</a>
     </li>
 
 
     {% endif %}
-
-</ul>
-
-
     <li>
         <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list'%}" role="button">Zurück</a><br>
     </li>
-
+</ul>
 
 
 {% endblock content %}
