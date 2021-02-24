@@ -8,41 +8,30 @@
     {% for test in object_list %}
     <li>{{ test.user }} - {{ test.englisches_wort_1 }} -->
         {% if test.antwort_englisches_wort_1 == None %}
-<!--        <a href="{% url 'englischtest_1_vokabel_update' test.pk%}">Starte Test</a>-->
-    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Starte Test</a><br>
-    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_detail' test.pk%}" role="button">Details des Tests</a>
-</li>
+        <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_detail' test.pk %}" role="button">Details des
+            Tests</a>
+        {% endif %}
+        {% if test.antwort_englisches_wort_1 == None %}
+        <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Starte Test</a>
+    </li>
 
-
-        {% else %}
-
-        {{ test.antwort_englisches_wort_1 }}
-
-
-<!--    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' test.pk%}" role="button">Wiederhole Test</a>-->
 
     {% endif %}
 
-    {% empty %}
-    <li>Derzeit gibt es keinen Test</li>
+
+    {% if test.antwort_englisches_wort_1 != None %}
+
+    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_detail' test.pk %}" role="button">Details des
+        Durchgeführten Tests</a><br>
+
+    {% endif %}
+
+
     {% endfor %}
+
+    {% for test in object_list %}
+
 </ul>
-
-<!--<a type="button" class="btn btn-secondary" href="{% url 'englischtest_1_vokabel_create' %}">
-    Erstelle neuen Test
-</a>-->
-
-<!--<a class="btn btn-default" href="{% url 'englischtest_1_vokabel_create'%}" role="button">Englischtest mit einer Vokabel.</a>-->
-
-
-<!--<a class="btn btn-default" href="{% url 'englischtest_1_vokabel_create' %}" role="button">-->
-
-
-<!--<button class="favorite styled" type="button">
-    <a href="{% url 'index' %}">Start</a>
-</button>-->
-
-<!--<a class="btn btn-default" href="{% url 'index'%}" role="button">Start</a>-->
-
+{% endfor %}
 
 {% endblock content %}

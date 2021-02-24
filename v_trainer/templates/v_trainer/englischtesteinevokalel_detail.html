@@ -2,36 +2,24 @@
 
 {% block content %}
 
+<h1>Test ID: {{ object.id }}</h1>
 
-<hr>
-Welche deutschen Wörter gehören<br>
-zu dem eingegebenen Englischen Wort<br>
+<p>Dein Testwort heißt: {{ object.englisches_wort_1 }}</p>
 
---> Mögliche richtige Antworten:
-
-{% for d_wort in all_dwort_list %}
-*
-{{ d_wort }}
-
-{% endfor %}
-
-<br><br>
-
-{% for d_wort in test %}
-*
-{{ d_wort }}
-
-{% endfor %}
-
-<br><br>
-
-Test: {{test}}
+<ul>
 
 
-<h1>ID: {{ object.id }}</h1>
-<p>object: {{ object }}</p>
-<p>englisches_wort_1: {{ object.englisches_wort_1 }}</p>
-<p>Date: {{ now|date }}</p>
+
+</ul>
+
+
+    <li>
+        <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list'%}" role="button">Zurück</a><br>
+    </li>
+
 
 
 {% endblock content %}
+
+
+
