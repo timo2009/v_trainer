@@ -8,6 +8,8 @@ urlpatterns = [
 	path('englischtest_1_vokabel/create/', EnglischTestEineVokalelCreate.as_view(), name='englischtest_1_vokabel_create'),
 	path('englischtest_1_vokabel/update/<pk>/', EnglischTestEineVokalelUpdate.as_view(), name='englischtest_1_vokabel_update'),
 	path('englischtest_1_vokabel/detail/<pk>/', EnglischTestEineVokalelDetail.as_view(), name='englischtest_1_vokabel_detail'),
-	path('englischtest_1_vokabel/list/', EnglischTestEineVokalelList.as_view(), name='englischtest_1_vokabel_list')
+	path('englischtest_1_vokabel/list/', EnglischTestEineVokalelList.as_view(), name='englischtest_1_vokabel_list'),
+	path('anleitung/', anleitung.as_view(), name='anleitung')
+
 
 ]
