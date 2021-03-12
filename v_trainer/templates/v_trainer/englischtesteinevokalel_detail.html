@@ -9,7 +9,10 @@
 {% if object.antwort_englisches_wort_1 != None %}
 
 <p>Deine Antwort heißt: {{ object.antwort_englisches_wort_1 }}</p>
+Und deine Antwort ist: -- Derzeit gibt es noch keine Überprüfung
 {% endif %}
+
+
 
 
 <ul>
@@ -17,15 +20,15 @@
 
     {% if object.antwort_englisches_wort_1 == None %}
 
-    <li><a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' object.pk%}" role="button">Starte
-        Test</a>
-    </li>
+    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_update' object.pk%}" role="button">Starte
+        Test</a><br>
+
 
 
     {% endif %}
-    <li>
+
         <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list'%}" role="button">Zurück</a><br>
-    </li>
+
 </ul>
 
 

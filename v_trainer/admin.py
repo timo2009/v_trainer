@@ -10,3 +10,4 @@ admin.site.register(EnglischesWort)
 @admin.register(EnglischTestEineVokalel)
 class DeutschTest(admin.ModelAdmin):
     list_display = ("id", "user", "englisches_wort_1")
+
