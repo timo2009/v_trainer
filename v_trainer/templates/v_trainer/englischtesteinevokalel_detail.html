@@ -1,22 +1,26 @@
 {% extends "v_trainer/base.html" %}
 
 {% block content %}
-
-<h1>Test Durchführer: {{ object.user }}</h1>
-
-<p>Dein Testwort heißt: {{ object.englisches_wort_1 }}</p>
-
-{% if object.antwort_englisches_wort_1 != None %}
-
-<p>Deine Antwort heißt: {{ object.antwort_englisches_wort_1 }}</p>
-Und deine Antwort ist: -- Derzeit gibt es noch keine Überprüfung
-{% endif %}
+<h1>
+    Test Details
+</h1>
 
 
+<h4>
+    <li>Test ID : {{object.id}}</li>
+    <li>Test Durchführer: {{object.user}}</li>
+    <li>Dein Testwort heißt: {{ object.englisches_wort_1 }}</li>
 
+
+    {% if object.antwort_englisches_wort_1 != None %}
+
+        <li>Deine Antwort heißt: {{ object.antwort_englisches_wort_1 }}</li>
+
+    {% endif %}
+
+</h4>
 
 <ul>
-
 
     {% if object.antwort_englisches_wort_1 == None %}
 
@@ -24,12 +28,10 @@ Und deine Antwort ist: -- Derzeit gibt es noch keine Überprüfung
         Test</a><br>
 
 
-
     {% endif %}
 
-        <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list'%}" role="button">Zurück</a><br>
+    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list'%}" role="button">Zurück</a><br>
 
 </ul>
-
 
 {% endblock content %}

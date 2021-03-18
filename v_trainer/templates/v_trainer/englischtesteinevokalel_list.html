@@ -9,7 +9,7 @@
     <li>Der Test mit der ID {{test.id}} hat den Durchführer {{ test.user }} -->
         {% if test.antwort_englisches_wort_1 == None %}
         <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_detail' test.pk %}" role="button">Details des
-            Tests</a>
+            Tests</a><br>
         {% endif %}
         {% if test.antwort_englisches_wort_1 == None %}
     </li>
