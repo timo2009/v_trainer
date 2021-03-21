@@ -7,14 +7,24 @@
 
 
 <h4>
-    <li>Test ID : {{object.id}}</li>
+    <li>Test ID: {{object.id}}</li>
     <li>Test Durchführer: {{object.user}}</li>
-    <li>Dein Testwort heißt: {{ object.englisches_wort_1 }}</li>
+
 
 
     {% if object.antwort_englisches_wort_1 != None %}
-
+        <li>Dein Testwort heißt: {{ object.englisches_wort_1 }}</li>
         <li>Deine Antwort heißt: {{ object.antwort_englisches_wort_1 }}</li>
+
+
+
+        <hr>
+        {% for wort in deutsche_woerter %}
+            <li>Richtige Antworten wären: {{ wort }}</li>
+        {% endfor %}
+        <hr>
+
+        Die Antwort ist: {{ergebnis}}
 
     {% endif %}
 

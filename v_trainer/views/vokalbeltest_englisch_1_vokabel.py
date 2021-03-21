@@ -1,7 +1,7 @@
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-from v_trainer.models import EnglischTestEineVokalel, DeutschesWort
+from v_trainer.models import EnglischTestEineVokalel, DeutschesWort, EnglischesWort
 from django.urls import reverse_lazy
 from django.utils import timezone
 
@@ -30,8 +30,23 @@ class EnglischTestEineVokalelDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['all_dwort_list'] = DeutschesWort.objects.all()
-        context['test'] = DeutschesWort.objects.filter(wort=EnglischTestEineVokalel.antwort_englisches_wort_1)
-        # context['all_dwort_list'] = DeutschesWort.filter(products__product_company=company)
-        return context
+        # Hiermit hole ich mir das zu dem Englischtest gehörende englische Wort
+        englisches_wort = self.object.englisches_wort_1
+        print('englisches_wort.dwort')
+        print(englisches_wort.dwort)
+        print('type(englisches_wort.dwort)')
+        print(type(englisches_wort.dwort))
 
+        context['englisches_wort'] = englisches_wort
+        context['deutsche_woerter'] = englisches_wort.dwort.all()
+
+        ergebnis = 'falsch'
+
+        for wort in englisches_wort.dwort.all():
+
+            if wort.wort == self.object.antwort_englisches_wort_1:
+                ergebnis = 'richtig'
+
+        context['ergebnis'] = ergebnis
+
+        return context
