@@ -7,4 +7,7 @@ class IndexView(TemplateView):
 class anleitung(TemplateView):
     template_name = "v_trainer/anleitung.html"
 
+class vokabeltestliste(TemplateView):
+    template_name = "v_trainer/vokabeltestliste.html"
+
 

@@ -1,0 +1,48 @@
+{% extends "v_trainer/base.html" %}
+
+{% block content %}
+<h1>
+    Test Details
+</h1>
+
+
+<h4>
+    <li>Test ID: {{object.id}}</li>
+    <li>Test Durchführer: {{object.user}}</li>
+
+
+
+    {% if object.antwort_deutsches_wort_1 != None %}
+        <li>Dein Testwort heißt: {{ object.deutsches_wort_1 }}</li>
+        <li>Deine Antwort heißt: {{ object.antwort_deutsches_wort_1 }}</li>
+
+
+
+        <hr>
+        {% for wort in englische_woerter %}
+            <li>Richtige Antworten wären: {{ wort }}</li>
+        {% endfor %}
+        <hr>
+
+        Die Antwort ist: {{ergebnis}}
+
+    {% endif %}
+
+</h4>
+
+<ul>
+
+    {% if object.antwort_deutsches_wort_1 == None %}
+
+    <a class="btn btn-default" href="{% url 'deutschtest_1_vokabel_update' object.pk%}" role="button">Starte
+        Test</a><br>
+
+
+    {% endif %}
+
+    <a class="btn btn-default" href="{% url 'deutschtest_1_vokabel_list'%}" role="button">Zurück</a><br>
+
+</ul>
+
+
+{% endblock content %}
