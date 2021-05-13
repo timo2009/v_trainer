@@ -1,13 +1,16 @@
 {% extends "v_trainer/base.html" %}
-
 {% block content %}
 
 
 
+<form method="post">
 
-<form method="post">{% csrf_token %}
+{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Abschließen">
 </form>
+<h4>Bitte gebe bei "Antwort auf deutsches wort 1" die Englische Übersetzung ein.</h4>
+    <h4>Wenn du den Test gerade erstellst musst du dass natürlich nicht machen:-)</h4>
+
 
 {% endblock content %}

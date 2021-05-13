@@ -51,7 +51,10 @@ class DeutschTestEineVokalelDetail(DetailView):
                 print(str(antwort_auf_deutsches_wort_1 )+ '!=' + str(englische_antwort.wort))
 
         context['ergebnis_d'] = ergebnis
-        context['englische_woerter'] = moeglische_englischen_antworten
 
+        context['englische_woerter'] = moeglische_englischen_antworten
+        context['anzeige'] = "Bitte gebe bei Antwort auf deutsches wort 1 die englische Übersetzung von dem Deutschem Wort ein."
+        controlle="controlle"
+        context['fuer_deutschtest_abschließung'] = controlle
         return context
 
