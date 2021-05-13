@@ -51,7 +51,7 @@ class EnglischTestEineVokalelDetail(DetailView):
         if ergebnis == "richtig":
             context['preis'] = 1
 
-        if ergebnis == "falsch":
+        else:
             context['preis'] = 2
 
         liste = [2]
