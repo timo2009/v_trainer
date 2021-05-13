@@ -2,13 +2,15 @@
 
 {% block content %}
 <h1>Teste</h1>
+<hr>
 <li>
-    Englischtest:<a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list' %}" role="button">Englischer Test</a>
+    <a class="btn btn-default" href="{% url 'englischtest_1_vokabel_list' %}" role="button">Englischer Test</a>
 </li>
-
+</hr>
+<hr>
 <li>
-    Deutschtest:<a class="btn btn-default" href="{% url 'deutschtest_1_vokabel_list' %}" role="button">Deutscher Test</a>
+   <a class="btn btn-default" href="{% url 'deutschtest_1_vokabel_list' %}" role="button">Deutscher Test</a>
 </li>
-
+</hr>
 
 {% endblock content %}
