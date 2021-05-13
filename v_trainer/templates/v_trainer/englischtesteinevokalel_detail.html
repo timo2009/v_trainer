@@ -29,7 +29,12 @@
     {% endif %}
 
 </h4>
-
+    {% if preis == 1 %}
+<h3>Super du bist richtig gut!!!</h3>
+{% endif %}
+{% if preis != 1 %}
+<h3>Schade nicht richtig</h3>
+{% endif %}
 <ul>
 
     {% if object.antwort_englisches_wort_1 == None %}
