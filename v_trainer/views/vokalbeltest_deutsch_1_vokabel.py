@@ -17,7 +17,7 @@ class DeutschTestEineVokalelCreate(CreateView):
 
 class DeutschTestEineVokalelUpdate(UpdateView):
     model = DeutschTestEineVokalel
-    fields = ['user', 'deutsches_wort_1', 'antwort_deutsches_wort_1']
+    fields = ['user', 'deutsches_wort_1', 'antwort_auf_deutsches_wort_1']
     success_url = reverse_lazy('deutschtest_1_vokabel_list')
     # template_name = 'englisch_test_update_form'
 
@@ -31,23 +31,27 @@ class DeutschTestEineVokalelDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Hiermit hole ich mir das zu dem Englischtest gehörende englische Wort
+        # Hiermit hole ich mir das zu dem Deutschtest gehörende englische Wort
         deutsches_wort = self.object.deutsches_wort_1
-        print('deutsches_wort.ewort')
-        print(deutsches_wort.ewort)
-        print('type(deutsches_wort.ewort)')
-        print(type(deutsches_wort.ewort))
-
+        antwort_auf_deutsches_wort_1 = self.object.antwort_auf_deutsches_wort_1
         context['deutsches_wort'] = deutsches_wort
-        context['englische_woerter'] = deutsches_wort.dwort.all()
-
         ergebnis = 'falsch'
 
-        for wort in deutsches_wort.dwort.all():
+        moeglische_englischen_antworten = deutsches_wort.list_of_dwords.all()
 
-            if wort.wort == self.object.antwort_deutsches_wort_1:
+        print("Mögliche englische Wörter für das deutsch Wort: " + deutsches_wort.wort)
+        print("-------------------------------------------------------------")
+        for englische_antwort in moeglische_englischen_antworten:
+            print("Antwort: " + englische_antwort.wort)
+
+            if antwort_auf_deutsches_wort_1 == englische_antwort.wort:
+                print(str(antwort_auf_deutsches_wort_1) + '==' + str(englische_antwort.wort))
                 ergebnis = 'richtig'
+            else:
+                print(str(antwort_auf_deutsches_wort_1 )+ '!=' + str(englische_antwort.wort))
 
-        context['ergebnis'] = ergebnis
+        context['ergebnis_d'] = ergebnis
+        context['englische_woerter'] = moeglische_englischen_antworten
 
         return context
+

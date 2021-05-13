@@ -12,9 +12,9 @@
 
 
 
-    {% if object.antwort_deutsches_wort_1 != None %}
+    {% if object.antwort_auf_deutsches_wort_1 != None %}
         <li>Dein Testwort heißt: {{ object.deutsches_wort_1 }}</li>
-        <li>Deine Antwort heißt: {{ object.antwort_deutsches_wort_1 }}</li>
+        <li>Deine Antwort heißt: {{ object.antwort_auf_deutsches_wort_1 }}</li>
 
 
 
@@ -24,7 +24,7 @@
         {% endfor %}
         <hr>
 
-        Die Antwort ist: {{ergebnis}}
+        Die Antwort ist: {{ergebnis_d}}
 
     {% endif %}
 
@@ -32,7 +32,7 @@
 
 <ul>
 
-    {% if object.antwort_deutsches_wort_1 == None %}
+    {% if object.antwort_auf_deutsches_wort_1 == None %}
 
     <a class="btn btn-default" href="{% url 'deutschtest_1_vokabel_update' object.pk%}" role="button">Starte
         Test</a><br>

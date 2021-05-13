@@ -48,5 +48,10 @@ class EnglischTestEineVokalelDetail(DetailView):
                 ergebnis = 'richtig'
 
         context['ergebnis'] = ergebnis
+        liste = [2]
 
+        if liste:
+            print("True")
+        else:
+            print("False")
         return context
