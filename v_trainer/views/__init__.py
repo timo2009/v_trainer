@@ -1,4 +1,4 @@
-from .views import IndexView, anleitung, vokabeltestliste
+from .views import IndexView, anleitung, vokabeltestliste, listView
 from .vokalbeltest_englisch_1_vokabel import EnglischTestEineVokalelCreate, EnglischTestEineVokalelUpdate, \
     EnglischTestEineVokalelList, EnglischTestEineVokalelDetail
 
