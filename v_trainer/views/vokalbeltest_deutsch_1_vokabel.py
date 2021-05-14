@@ -54,6 +54,9 @@ class DeutschTestEineVokalelDetail(DetailView):
         if ergebnis == "richtig":
             context['preis'] = 1
 
+        if ergebnis == "falsch":
+            context['preis'] = 2
+
         context['englische_woerter'] = moeglische_englischen_antworten
         context['anzeige'] = "Bitte gebe bei Antwort auf deutsches wort 1 die englische Übersetzung von dem Deutschem Wort ein."
         controlle="controlle"
