@@ -47,12 +47,12 @@ class EnglischTestEineVokalelDetail(DetailView):
             if wort.wort == self.object.antwort_englisches_wort_1:
                 ergebnis = 'richtig'
 
+
         context['ergebnis'] = ergebnis
         if ergebnis == "richtig":
             context['preis'] = 1
 
-        else:
-            context['preis'] = 2
+
 
         liste = [2]
 

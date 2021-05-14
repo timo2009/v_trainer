@@ -1,6 +1,8 @@
 {% extends "v_trainer/base.html" %}
 
 {% block content %}
+{% load static %}
+
 <h1>
     Test Details
 </h1>
@@ -31,7 +33,10 @@
 </h4>
     {% if preis == 1 %}
 <h3>Super du bist richtig gut!!!</h3>
+<img src="{% static 'richtig.png' %}" alt=" " height="125" >
 {% endif %}
+
+
 
 <ul>
 
