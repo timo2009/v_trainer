@@ -18,7 +18,7 @@ urlpatterns = [
 	path('englischtest_1_vokabel/form/<pk>/', DeutschTestEineVokalelList.as_view(), name='englischtest_1_vokabel_form'),
 	path('vokabeltestliste/', vokabeltestliste.as_view(), name='vokabeltestliste'),
 	path('anleitung/', anleitung.as_view(), name='anleitung'),
-	path('neuer_test/', anleitung.as_view(), name='neuer_test')
+	path('neuer_test/', neuerTest.as_view(), name='neuer_test')
 
 
 

@@ -10,7 +10,7 @@ class anleitung(TemplateView):
 class vokabeltestliste(TemplateView):
     template_name = "v_trainer/vokabeltestliste.html"
 
-class neuer_test(TemplateView):
+class neuerTest(TemplateView):
     template_name = "v_trainer/neuer_test.html"
 
 
