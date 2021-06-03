@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'v_trainer'
+    'v_trainer',
+    'radioready'
 ]
 
 MIDDLEWARE = [

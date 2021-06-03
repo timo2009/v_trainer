@@ -16,7 +16,8 @@ urlpatterns = [
 	path('deutschtest_1_vokabel/list/', DeutschTestEineVokalelList.as_view(), name='deutschtest_1_vokabel_list'),
 	path('vokabeltestliste/', vokabeltestliste.as_view(), name='vokabeltestliste'),
 	path('anleitung/', anleitung.as_view(), name='anleitung'),
-	path('neuer_test/', listView.as_view(), name='neuer_test')
+	path('neuer_test/', listView.as_view(), name='neuer_test'),
+	path('radio_ready/', RadioReady.as_view(), name='radio_ready')
 
 
 

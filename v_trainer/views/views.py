@@ -13,4 +13,8 @@ class anleitung(TemplateView):
 class vokabeltestliste(TemplateView):
     template_name = "v_trainer/vokabeltestliste.html"
 
+class RadioReady(TemplateView):
+    template_name = "v_trainer/radio_ready.html"
+
+
 

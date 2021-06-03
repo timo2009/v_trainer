@@ -1,0 +1,13 @@
+{% extends 'radioready/base.html' %}
+{% block content %}
+
+<h1>Radio Shows</h1>
+<ul>
+{% for show in object_list %}
+    <li><a href="{{ show.link_to_radio_show }}">{{ show.name }}</a></li>
+{% empty %}
+    <li>No radio show yet.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
