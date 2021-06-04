@@ -6,4 +6,4 @@ from radioready.models import RadioShow
 
 @admin.register(RadioShow)
 class RadioShow(admin.ModelAdmin):
-    list_display = ("id", "name", "link_to_radio_show")
+    list_display = ("id", "name", "link_to_radio_show", "quiz")

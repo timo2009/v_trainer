@@ -22,6 +22,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('v_trainer/', include('v_trainer.urls')),
-    path('radio_ready/', include('radioready.urls')),
+    path('radioready/', include('radioready.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
