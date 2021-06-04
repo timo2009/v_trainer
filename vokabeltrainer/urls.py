@@ -20,7 +20,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls ),
     path('v_trainer/', include('v_trainer.urls')),
     path('radioready/', include('radioready.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

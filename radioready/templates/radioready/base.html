@@ -1,6 +1,7 @@
 {% load static %}
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="https://moodle.moerike-gymnasium.de/moodle/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://moodle.moerike-gymnasium.de/moodle/theme/styles.php/boost/1618051268_1617734748/all" />
         <style>
       .modal-window {
         position: fixed;
@@ -57,6 +58,7 @@
       }
   </style>
         <title>Radio Ready</title>
+            <link rel="shortcut icon" type="image/png" href="{% static 'favicon2.ico' %}"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </head>
@@ -65,7 +67,14 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{% url 'radio_ready-list'%}">Startseite</a>
+                    <a class="navbar-brand" href="{% url 'radioandenken'%}">Andenken</a>
+                    <a class="nav-link" href="http://timo1streich.pythonanywhere.com/admin">Adminestration</a>
                 </div>
+                <ul class="navbar-nav">
+            <li class="nav-item">
+
+            </li>
+        </ul>
             </nav>
             <div class="container mt-4">
                 <div class="row">
@@ -85,6 +94,7 @@
                     <div class="col-1"></div>
                     <div class="col-10">
                         - Radio Ready von Timo Streich und Jonathan Rieger - <br>- Webseite erstellt von Timo Streich -<br>
+                        <a href="https://t5f5a8370.emailsys1c.net/41/4455/979af715f6/subscribe/form.html?_g=1622811195" role="button">Für den Newsletter anmelden</a><br>
                         <a href="#open-modal">So arbeitet Radio Ready</a>
     </font>
     <div id="open-modal" class="modal-window">
@@ -100,7 +110,7 @@
           2.Wenn du auf Info klickst kommst du zu der Seite, wo das Quiz steht und wo seit neuem auch der Gewinner seinen Preis bekommt
         </h3></div>
         <div><h3>
-          3.Über der Tabelle gibt es Aktuelles. Der Newsletter steht auch dort
+          3.Über der Tabelle gibt es Aktuelles.
         </h3></div>
         <div><h3>
           4. <i>Newsletter</i>

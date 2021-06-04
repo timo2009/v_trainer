@@ -7,14 +7,16 @@
         <table border="1">
           <tr>
             <th>Name</th>
-            <th>Link</th>
-            <th>Quiz</th>
+            <th>|Link</th>
+            <th>|Quiz</th>
+            <th>|Einsendeschluss</th>
           </tr>
     {% for show in object_list %}
       <tr>
-            <td>{{ show.name }}</td>
-            <td><a href="{{ show.link_to_radio_show }}" role="button">Klick mich</a></td>
-            <td>{{ show.quiz }}</td>
+            <td>{{ show.name }}|</td>
+            <td><a href="{{ show.link_to_radio_show }}" role="button">Klick mich</a>|</td>
+            <td>{{ show.quiz }}|</td>
+            <td>{{ show.einsendeschluss }}</td>
 
           </tr>
 
