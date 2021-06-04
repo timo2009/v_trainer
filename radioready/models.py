@@ -9,3 +9,14 @@ class RadioShow(models.Model):
 
     def __str__(self):
         return self.name
+
+class RadioUser(models.Model):
+    firstname = models.CharField(max_length=1000, default='', blank=True)
+    username = models.CharField(max_length=100, default='')
+    passwort = models.CharField(max_length=100, default='')
+
+
+    def __str__(self):
+        return self.firstname
+
+

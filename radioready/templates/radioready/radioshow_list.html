@@ -1,14 +1,25 @@
 {% extends 'radioready/base.html' %}
 {% block content %}
     <h1>Radio Shows</h1>
-    {% for show in object_list %}
-        <h2>
-            {{ show.name }}: <audio><source src="{{ show.link_to_radio_show }}"></audio><audio controls>
-			<source src="{{ show.link_to_radio_show }}"></audio>
-            <br>
-            Quiz: {{ show.quiz }}?
-        </h2>
 
+<h2>
+    <table>
+        <table border="1">
+          <tr>
+            <th>Name</th>
+            <th>Link</th>
+            <th>Quiz</th>
+          </tr>
+    {% for show in object_list %}
+      <tr>
+            <td>{{ show.name }}</td>
+            <td><a href="{{ show.link_to_radio_show }}" role="button">Klick mich</a></td>
+            <td>{{ show.quiz }}</td>
+
+          </tr>
 
     {% endfor %}
+        </table>
+</table>
+</h2>
 {% endblock content %}

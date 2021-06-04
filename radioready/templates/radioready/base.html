@@ -1,6 +1,61 @@
 {% load static %}
 <html>
     <head>
+        <style>
+      .modal-window {
+        position: fixed;
+        background-color: rgba(200, 200, 200, 0.75);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .modal-window:target {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-window>div {
+        width: 500px;
+        position: relative;
+        margin: 10% auto;
+        padding: 2rem;
+        background: #fff;
+        color: #444;
+      }
+
+      .modal-window header {
+        font-weight: bold;
+      }
+
+      .modal-close {
+        color: #aaa;
+        line-height: 50px;
+        font-size: 120%;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 70px;
+       text-decoration: none;
+      }
+
+      .modal-close:hover {
+        color: #000;
+      }
+
+      .modal-window h1 {
+        font-size: 200%;
+        margin: 0 0 15px;
+      }
+  </style>
         <title>Radio Ready</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
@@ -29,7 +84,33 @@
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10">
-                        - Radio Ready von Timo Streich und Jonathan Rieger - <br>- Webseite erstellt von Timo Streich -
+                        - Radio Ready von Timo Streich und Jonathan Rieger - <br>- Webseite erstellt von Timo Streich -<br>
+                        <a href="#open-modal">So arbeitet Radio Ready</a>
+    </font>
+    <div id="open-modal" class="modal-window">
+      <div>
+        <a href="#modal-close" title="Schließen" class="modal-close">&times;</a>
+        <div><h1>So arbeitet Radio Ready</h1></div>
+        <div><h3>
+          1.In der Tabelle werden
+          <br>
+          die Sendungen angezeigt
+        </h3></div>
+        <div><h3>
+          2.Wenn du auf Info klickst kommst du zu der Seite, wo das Quiz steht und wo seit neuem auch der Gewinner seinen Preis bekommt
+        </h3></div>
+        <div><h3>
+          3.Über der Tabelle gibt es Aktuelles. Der Newsletter steht auch dort
+        </h3></div>
+        <div><h3>
+          4. <i>Newsletter</i>
+          <br>
+          Der Newsletter ist dafür da, um die Nutzer von Radio Ready über Neue Sendungen und andere Aktuelle Themen zu informieren.<br>
+          Es gibt auch manchmal Newsletter verlosungen...
+          <br><br>
+        </h3></div>
+      </div>
+    </div>
                     </div>
                     <div class="col-1"></div>
                 </div>
