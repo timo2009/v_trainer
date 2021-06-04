@@ -12,3 +12,6 @@ class RadioShowListView(LoginRequiredMixin, ListView):
 
 class RadioAndenken(TemplateView):
     template_name = "radioready/radioandenken.html"
+
+class NutzerDaten(TemplateView):
+    template_name = "radioready/daten_und_nutzer.html"
