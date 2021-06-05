@@ -70,6 +70,16 @@
                     <a class="navbar-brand" href="{% url 'radio_ready-list'%}">Startseite</a>
                     <a class="navbar-brand" href="{% url 'radioandenken'%}">Andenken</a>
                     Du bist angemeldet als {{ user.username }}
+                    {% if user.username == "Timo"%}
+                        <a href="http://timo1streich.pythonanywhere.com/admin" title="Adminestrationsseite" target="_blank">
+                             Adminestrationsseite
+                        </a>
+                    {% endif %}
+                    {% if user.username == "Jonathan"%}
+                        <a href="http://timo1streich.pythonanywhere.com/admin" title="Adminestrationsseite" target="_blank">
+                            Adminestrationsseite
+                        </a>
+                    {% endif %}
                     <a class="navbar-brand" href="{% url 'logout'%}">Logout</a>
                 </div>
                 <ul class="navbar-nav">
