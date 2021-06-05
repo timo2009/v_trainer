@@ -4,7 +4,7 @@
 <h2>Hallo {{ user.username }}</h2>
 
 <h4>
-    Schreibt eure Lösung an <a href="mailto:radioready.quiz@gmail.com" class="mailto-link" target="_blank">radioready.quiz@gmail.com</a> <br>
+    Schreibt eure Lösung an <a href="mailto:radioready.quiz@gmail.com" class="mailto-link" target="_blank" style="color: red">radioready.quiz@gmail.com</a> <br>
     <table>
         <table border="1">
           <tr>
@@ -16,7 +16,7 @@
     {% for show in object_list %}
       <tr>
             <td>{{ show.name }}</td>
-            <td><a href="{{ show.link_to_radio_show }}" role="button">Klick mich</a></td>
+            <td><a href="{{ show.link_to_radio_show }}" role="button" style="color: red">Klick mich</a></td>
             <td>{{ show.quiz }}</td>
             <td>{{ show.deadline }}</td>
       </tr>
