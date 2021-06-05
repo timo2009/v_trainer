@@ -15,3 +15,6 @@ class RadioAndenken(TemplateView):
 
 class NutzerDaten(TemplateView):
     template_name = "radioready/daten_und_nutzer.html"
+
+class RadioNewsletter(TemplateView):
+    template_name = "radioready/newsletter.html"
