@@ -1,53 +1,12 @@
- urls.py in vokabeltest:
-
-     path('', views.index, name='index'),
-	 path('deutschtest/', views.deutschtest, name='deutschtest'),
-	 path('test/', views.test, name='test'),
-
-in englischtesteinevokabel_list.html:
-{% empty %}
-
-{% endfor %}
+A picture in a model upload:
+    field_name = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
 
 
+Or for example in the class:
 
-else in englischtesteinevokabel_list.html:
-
- {% else %}
-    {{ test.antwort_englisches_wort_1 }}-->Falsch
-
-
-
-
-
- detal:
-
- <!--{% else %}-->
-
-<!--        Deine Antwort war: {{ test.antwort_englisches_wort_1 }}-->
-<!--{% endblock %}-->
-
-
-
-
-
-
-
-
-
-Base:
-
-head:
-
-<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"-->
-<!--          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
-
-<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"-->
-<!--            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"-->
-<!--            crossorigin="anonymous"></script>-->
-
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
-
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
-
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+class MyModel(models.Model):
+    # file will be uploaded to MEDIA_ROOT / uploads
+    upload = models.ImageField(upload_to ='uploads/')
+    # or...
+    # file will be saved to MEDIA_ROOT / uploads / 2015 / 01 / 30
+    upload = models.ImageField(upload_to ='uploads/% Y/% m/% d/')

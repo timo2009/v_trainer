@@ -1,8 +1,8 @@
-from django.utils import timezone
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic import TemplateView
-from django.views.generic.edit import UpdateView
-from radioready.models import RadioShow
+from radioready.models import RadioShow, SongWishes
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -18,3 +18,15 @@ class NutzerDaten(TemplateView):
 
 class RadioNewsletter(TemplateView):
     template_name = "radioready/newsletter.html"
+
+
+
+
+class SongWishesCreate(CreateView):
+    model = SongWishes
+    fields = ['user', 'song_wishes', "author"]
+    success_url = reverse_lazy('songwishes_list')
+    # template_name = 'song_wishes_update_form'
+
+
+

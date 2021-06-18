@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 
 
+
 class EnglischTestEineVokalelCreate(CreateView):
     model = EnglischTestEineVokalel
     fields = ['user', 'englisches_wort_1']
