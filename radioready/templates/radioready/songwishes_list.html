@@ -1,0 +1,17 @@
+<div class="col-1"></div>
+{% extends "radioready/base.html" %}
+{% block content %}
+<h2>
+    Hier kannst du dir, <br>
+    die gewünschten Lieder anschauen <a href="{% url 'songwishes_create'%}" role="button" style="color: black"><br>und hier dein eigenes hinzufügen.</a>
+</h2>
+
+<h4>
+    <hr>
+{% for song in object_list %}
+
+Das Lied {{ song.song }} von den {{song.author}} wünscht sich{{song.creator}}<br>
+<hr>
+{% endfor %}
+</h4>
+{% endblock content %}

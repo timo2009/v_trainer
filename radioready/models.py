@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime
 
+
 # Create your models here.
 class RadioShow(models.Model):
     name = models.CharField(max_length=100, default='')
@@ -19,10 +20,15 @@ class RadioShow(models.Model):
 
 
 class SongWishes(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE),
-    song_wishes = models.CharField(max_length=100),
-    author = models.CharField(max_length=1000)
+    author = models.CharField(max_length=100)
+    creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    song = models.CharField(null=True, max_length=1000)
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
-    def __str__(self):
-        return self.song_wishes
+    def save_model(self, request, obj, form, change):
+        if getattr(obj, 'user', None) is None:
+            obj.creator = request.user
+        obj.save()
 
+    class Meta:
+        ordering = ['-created']

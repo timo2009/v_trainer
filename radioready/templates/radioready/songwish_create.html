@@ -3,15 +3,12 @@
 {% block content %}
 
 
-
+<h3>Hallo bitte gib deinen Liedwunsch ein</h3><br>
+<h5>
 <form method="post">
-
 {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Liedwunsch abschicken">
 </form>
-<hr>
-</hr>
-
-
+</h5>
 {% endblock content %}
