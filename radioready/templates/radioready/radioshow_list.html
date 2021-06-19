@@ -7,27 +7,25 @@
 <h5>
     Schreibt eure Lösung an <a href="mailto:radioready.quiz@gmail.com" class="mailto-link" target="_blank" style="color: black">radioready.quiz@gmail.com</a> <br>
    <div class="container-fluid">
-       <hr>
          <table summary="no_orderDate">
                 <table border="2">
                   <tr>
-                    <th><h5>Name</h5></th>
-                      <th><h5>|Link</h5></th>
-                    <th><h5>|Quiz</h5></th>
-                    <th><h5>|Einsendeschluss</h5></th>
-                      <th><h5>|Sieger der Sendung</h5></th>
+                    <th><h5>Name</h5><hr></th>
+                      <th><h5>|Link<hr></h5></th>
+                    <th><h5>|Quiz</h5><hr></th>
+                    <th><h5>|Einsendeschluss</h5><hr></th>
+                      <th><h5>|Sieger der Sendung</h5><hr></th>
                   </tr>
-                    </hr>
+
             {% for show in object_list %}
-                    <hr>
+
               <tr>
-                  <td><h5>{{ show.name }}  </h5></td>
-                  <td><h5><a href="{{ show.link_to_radio_show }}" role="button" style="color: black">Klick mich</a>  </h5></td>
-                  <td><h5>{{ show.quiz }}  </h5></td>
-                  <td><h5>{{ show.deadline }}</h5></td>
-                  <td><h5>{{ show.winner }}</h5></td>
+                  <td><h5>{{ show.name }}  </h5><hr></td>
+                  <td><h5><a href="{{ show.link_to_radio_show }}" role="button" style="color: black">Klick mich</a>  </h5><hr></td>
+                  <td><h5>{{ show.quiz }}  </h5><hr></td>
+                  <td><h5>{{ show.deadline }}</h5><hr></td>
+                  <td><h5>{{ show.winner }}</h5><hr></td>
               </tr>
-                    </hr>
             {% endfor %}
                 </table>
         </table>
