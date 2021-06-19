@@ -17,6 +17,7 @@
                       <th><h5>|Sieger der Sendung</h5></th>
                   </tr>
             {% for show in object_list %}
+                    <hr>
               <tr>
                   <td><h5>{{ show.name }}  </h5></td>
                   <td><h5><a href="{{ show.link_to_radio_show }}" role="button" style="color: black">Klick mich</a>  </h5></td>
@@ -24,6 +25,7 @@
                   <td><h5>{{ show.deadline }}</h5></td>
                   <td><h5>{{ show.winner }}</h5></td>
               </tr>
+                    </hr>
             {% endfor %}
                 </table>
         </table>
