@@ -23,7 +23,11 @@
                   <td><h5>{{ show.name }}  </h5><hr></td>
                   <td><h5><a href="{{ show.link_to_radio_show }}" role="button" style="color: black">Klick mich</a>  </h5><hr></td>
                   <td><h5>{{ show.quiz }}  </h5><hr></td>
-                  <td><h5>{{ show.deadline }}</h5><hr></td>
+                  <td><h5>
+                            {{ show.deadline }}
+
+
+                                </h5><hr></td>
                   <td><h5>{{ show.winner }}</h5><hr></td>
               </tr>
             {% endfor %}
