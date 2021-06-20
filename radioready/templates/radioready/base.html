@@ -147,9 +147,21 @@ Reporter, Mann am Ton, Liedermanager, Webseiten Programmierer)
 
       </div>
     </div>
+                    {% if user.username == "Timo"%}
+                    <!--                    Hiermit kann man die derzeitgeöffnete seite drucken-->
+
+                                            <a href="javascript:window.print()" style="color: red">Seite drucken</a>
+
+                    {% endif %}
+                    {% if user.username == "Jonathan"%}
+<!--                    Hiermit kann man die derzeitgeöffnete seite drucken-->
+                                           <a href="javascript:window.print()" style="color: red">Seite drucken</a>
+
+                    {% endif %}
 
                     </div>
-                    <div class="col-1"></div>
+                    <div class="col-1">
+</div>
                 </div>
             </div>
     </footer>
