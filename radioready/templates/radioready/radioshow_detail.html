@@ -25,6 +25,17 @@
              x.pause();
          }
 </script>
+    <hr>
+    Falls der RR Player, könnt ihr hier die Sendung auch abspielen...
+    <audio>
+
+					<source src="{{ object.link_to_radio_show }}">
+				</audio>
+
+				<audio controls>
+					<source src="{{ object.link_to_radio_show }}">
+				</audio>
+
       <br>
         <hr>
             <a class="btn btn-default" href="{% url 'radio_ready-list' %}" role="button">Zurück</a>
