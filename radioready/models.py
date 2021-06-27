@@ -32,3 +32,21 @@ class SongWishes(models.Model):
 
     class Meta:
         ordering = ['-created']
+
+
+# Hier ist die Lösungs Möglichkeit zum Quiz
+# class QuizAnswer(models.Model):
+#     creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+#     shows = models.ManyToManyField(RadioShow, related_name='list_of_shows')
+#     answer = models.TextField(max_length=1000, default='', blank=True)
+#     solution1 = models.TextField(max_length=1000, null=True, blank=True)
+#     solution2 = models.TextField(max_length=1000, null=True, blank=True)
+#     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+#
+#     def save_model(self, request, obj, form, change):
+#         if getattr(obj, 'user', None) is None:
+#             obj.creator = request.user
+#         obj.save()
+#
+#     class Meta:
+#         ordering = ['-created']

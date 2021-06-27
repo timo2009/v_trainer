@@ -2,7 +2,6 @@
 {% block content %}
     <h1>Radio Ready Sendungen</h1>
 <h2>Hallo {{ user.username }}<br>
-
 <!--Wünsch dir doch mal ein Lied:<a href="{{ songwishes_list }}" role="button" style="color: black">Klick mich</a>-->
 </h2>
 
@@ -23,7 +22,25 @@
 
               <tr>
                   <td><h5>{{ show.name }}  </h5><hr></td>
-                  <td><h5><a href="{{ show.link_to_radio_show }}" role="button" style="color: black">Klick mich</a>  </h5><hr></td>
+                  <td><h5>
+                      <audio id="audiofile" preload="auto">
+                            <source src="{{show.link_to_radio_show}}" type="audio/mpeg"/>
+                      </audio>
+                      <button onclick="playAudio()" type="button">An</button><button onclick="pauseAudio()" type="button">Aus</button>
+                      <script>
+                         let x = document.getElementById("audiofile");
+
+                         function playAudio() {
+                             x.play();
+                         }
+
+                         function pauseAudio() {
+                             x.pause();
+                         }
+                      </script>
+                  </h5><hr>
+
+     </td>
                   <td><h5>{{ show.quiz }}  </h5><hr></td>
                   <td><h5>
                             {{ show.deadline }}
