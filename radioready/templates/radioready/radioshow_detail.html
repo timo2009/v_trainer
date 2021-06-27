@@ -1,0 +1,31 @@
+{% extends "radioready/base.html" %}
+{% block content %}
+<h1>Hier ist die {{ object.name }}</h1>
+<h3>Und hier ist der Player</h3>
+<h5>
+<audio id="audiofile" preload="auto" loop="loop">
+        <source src="{{ object.link_to_radio_show }}" type="audio/mpeg" />
+      </audio>
+      <script>
+        document.getElementById('audiofile').play();
+      </script>
+      <button onclick="playAudio()" type="button">An</button>
+      <button onclick="pauseAudio()" type="button">Aus</button>
+
+
+      <script>
+         var x = document.getElementById("audiofile");
+
+         function playAudio() {
+             x.play();
+         }
+
+         function pauseAudio() {
+             x.pause();
+         }
+</script>
+      <br>
+        <hr>
+            <a class="btn btn-default" href="{% url 'radio_ready-list' %}" role="button">Zurück</a>
+</h5>
+{% endblock content %}

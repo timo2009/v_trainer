@@ -7,6 +7,7 @@ urlpatterns = [
     path('daten_und_nutzer', NutzerDaten.as_view(), name='daten_und_nutzer'),
     path('newsletter', RadioNewsletter.as_view(), name='newsletter'),
     path('songwishes/create/', SongWishesCreate.as_view(), name='songwishes_create'),
-    path('songwishes', SongWishesList.as_view(), name='songwishes_list')
+    path('songwishes', SongWishesList.as_view(), name='songwishes_list'),
+    path('radioshow/detail/<pk>/', RadioShowDetail.as_view(), name='radioshow_detail')
 
 ]

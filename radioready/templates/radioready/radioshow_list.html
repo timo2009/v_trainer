@@ -23,7 +23,12 @@
               <tr>
                   <td><h5>{{ show.name }}  </h5><hr></td>
                   <td><h5>
-                      <a href="{{ show.link_to_radio_show }}" style="color: black" target="_blank">Klick mich</a>
+                      <a href="{% url 'radioshow_detail' show.pk%}" style="color: black" target="_blank">Klick mich</a>
+<!--                      <audio id="{{ show.name }}" preload="auto" loop="loop">-->
+<!--                         <source src="{{ show.link_to_radio_show }}" type="audio/mpeg" />-->
+<!--                      </audio>-->
+<!--                             <button onclick="playAudio()" type="button">An</button>-->
+<!--      <button onclick="pauseAudio()" type="button">Aus</button>-->
                   </h5><hr>
 
      </td>
@@ -35,6 +40,15 @@
                                 </h5><hr></td>
                   <td><h5>{{ show.winner }}</h5><hr></td>
               </tr>
+<!--                        <script>-->
+<!--        var x = document.getElementById("{{ show.name }}");-->
+<!--        function playAudio() {-->
+<!--        x.play();-->
+<!--        }-->
+<!--        function pauseAudio() {-->
+<!--        x.pause();-->
+<!--        }-->
+<!--    </script>-->
             {% endfor %}
                 </table>
         </table>
@@ -44,4 +58,5 @@
 
 
 </h5>
+
 {% endblock content %}
