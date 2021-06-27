@@ -23,21 +23,7 @@
               <tr>
                   <td><h5>{{ show.name }}  </h5><hr></td>
                   <td><h5>
-                      <audio id="audiofile" preload="auto">
-                            <source src="{{show.link_to_radio_show}}" type="audio/mpeg"/>
-                      </audio>
-                      <button onclick="playAudio()" type="button">An</button><button onclick="pauseAudio()" type="button">Aus</button>
-                      <script>
-                         let x = document.getElementById("audiofile");
-
-                         function playAudio() {
-                             x.play();
-                         }
-
-                         function pauseAudio() {
-                             x.pause();
-                         }
-                      </script>
+                      <a href="{{ show.link_to_radio_show }}" style="color: black" target="_blank"></a>
                   </h5><hr>
 
      </td>
