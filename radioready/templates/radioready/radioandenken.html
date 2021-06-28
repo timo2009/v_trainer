@@ -1,8 +1,64 @@
-<div class="col-1"></div>
+<head>
+    <style>
+      #receptContent {
+        display: none;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+       var x = document.getElementById("audiofile");
+        var receptStatus = "unsichtbar";
+        var receptButton = document.querySelector('#receptButton');
+        var recpetContent = document.querySelector("#receptContent");
+        receptButton.addEventListener("click", function() {
+            if(receptStatus == "unsichtbar") {
+                receptStatus = "sichtbar";
+                receptButton.value = "Verbergen";
+                receptContent.style.display = "block";
+            } else {
+                receptStatus = "unsichtbar";
+                receptButton.value = "Hier ist der Trailer...";
+                receptContent.style.display = "none";
+            }
+        });
+      });
+    </script>
+  </head>
 {% extends 'radioready/base.html' %}
 {% block content %}
     <h1>Radio Andenken Center</h1>
+<audio id="audiofile" preload="auto">
+        <source src="http://timo.tomsbox.de/Audio/Trailer.mp3" type="audio/mpeg" />
+      </audio>
 <h3><a href="http://timo.tomsbox.de/medien/bilder/Armband.pdf" role="button" style="color: green">Was sich hier wohl verbirgt...</a><br><br>
     <a href="http://timo.tomsbox.de/medien/bilder/Kekse.pdf" role="button" style="color: white">Wir sind gespannt...</a><br><br>
     <a href="http://timo.tomsbox.de/medien/bilder/Witz_1.pdf" role="button" style="color: black">Oder hier...</a><br><br></h3>
+<input type="button" id="receptButton" onclick="setTimeout(myFunction, 300)" style="color: red" value="und hier musst du warten...">
+    <div id="receptContent">
+      <h2>Hier ist der Player...</h2>
+            <button onclick="playAudio()" type="button">An</button>
+      <button onclick="pauseAudio()" type="button">Aus</button>
+        <script>
+          var x = document.getElementById("audiofile");
+
+function playAudio() {
+  x.play();
+}
+
+function pauseAudio() {
+ x.pause();
+}
+        </script>
+    </div>
+<script>
+function myFunction() {
+
+
+        document.getElementById('audiofile').play();
+  var x = document.getElementById("audiofile");
+
+  }
+
+
+</script>
 {% endblock content %}
