@@ -8,6 +8,7 @@ urlpatterns = [
     path('newsletter', RadioNewsletter.as_view(), name='newsletter'),
     path('songwishes/create/', SongWishesCreate.as_view(), name='songwishes_create'),
     path('songwishes', SongWishesList.as_view(), name='songwishes_list'),
-    path('radioshow/detail/<pk>/', RadioShowDetail.as_view(), name='radioshow_detail')
+    path('radioshow/detail/<pk>/', RadioShowDetail.as_view(), name='radioshow_detail'),
+    path('style', StyleCss.as_view(), name='style')
 
 ]

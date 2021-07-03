@@ -25,6 +25,9 @@ class NutzerDaten(TemplateView):
 class RadioNewsletter(TemplateView):
     template_name = "radioready/newsletter.html"
 
+class StyleCss(TemplateView):
+    template_name = "radioready/style.css"
+
 
 class SongWishesCreate(CreateView):
     model = SongWishes
