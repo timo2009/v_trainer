@@ -61,7 +61,7 @@
   </style>        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/png" href="{% static 'v_trainer/favicon.ico' %}"/>
         <link href="{% static 'radioready/style.css' %}" rel="stylesheet" type="text/css">
-<script>
+        <script>
 function setCookie(cname,cvalue,exdays) {
   let d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -86,6 +86,112 @@ function getCookie(cname) {
 }
 
 </script>
+        <style>
+
+.importandAnimation{
+  	font-size: 15px;
+    color: black;
+	animation-duration: 2s;
+    /* Dauer der Animation */
+    animation-name: slidein;
+    /* Name der Animation */
+    animation-iteration-count: 1;
+    /* Wie oft soll sie durchgeführt werden? */
+}
+.animation{
+	animation-duration: 2s;
+    /* Dauer der Animation */
+    animation-name: slidein;
+    /* Name der Animation */
+    animation-iteration-count: 1;
+    /* Wie oft soll sie durchgeführt werden? */
+}
+
+/* Hier ist die Animationn*/
+@keyframes slidein {
+      from {
+        margin-left: -0%;
+        width: -0%;
+        /* Wo soll das Bewegendeobjekt starten */
+      }
+
+    0% {
+        font-size: 100%;
+        margin-right: 24%;
+        width: 100%;
+        /* Hier wird die Schriftgröße während der animation verändert */
+        color: darksalmon;
+    }
+    25% {
+        font-size: 300%;
+        margin-right: 24%;
+        width: 300%;
+        /* Hier wird die Schriftgröße während der animation verändert */
+        color: darkred;
+    }
+
+    50% {
+        font-size: 500%;
+        margin-right: 24%;
+        width: 500%;
+        /* Hier wird die Schriftgröße während der animation verändert */
+        color: red;
+
+    }
+    75% {
+        font-size: 300%;
+        margin-right: 24%;
+        width: 300%;
+        /* Hier wird die Schriftgröße während der animation verändert */
+        color: orangered;
+    }
+
+    100%{
+        font-size: 100%;
+        margin-right: 24%;
+        width: 100%;
+        /* Hier wird die Schriftgröße während der animation verändert */
+        color: darksalmon;
+    }
+    to {
+        margin-right: -1000%;
+        width: -10000%;
+        /* Wo ist das Objekt zum schluss */
+    }
+}
+
+.element {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
+}
+
+        </style>
 <!--        Hier ist das css für mich-->
     </head>
     <body class="d-flex flex-column min-vh-100">
