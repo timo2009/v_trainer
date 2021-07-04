@@ -9,6 +9,7 @@ class RadioShow(models.Model):
     link_to_radio_show = models.URLField()
     quiz = models.TextField(max_length=1000, default='', blank=True)
     winner = models.CharField(max_length=1000, default='', blank=True)
+    staffel = models.CharField(max_length=1000, default='', blank=True)
     deadline = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
     created = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
 

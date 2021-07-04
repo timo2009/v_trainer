@@ -14,6 +14,7 @@ Hier drei Wichtige Informationen:
                 <table border="2">
                   <tr>
                     <th><h5>Name</h5><hr></th>
+                      <th><h5>|Staffel</h5><hr></th>
                       <th><h5>|Link<hr></h5></th>
                     <th><h5>|Quiz</h5><hr></th>
                     <th><h5>|Einsendeschluss</h5><hr></th>
@@ -24,6 +25,7 @@ Hier drei Wichtige Informationen:
 
               <tr>
                   <td><h5>{{ show.name }}  </h5><hr></td>
+                  <td><h5>{{ show.staffel }}  </h5><hr></td>
                   <td><h5>
                       <a href="{% url 'radioshow_detail' show.pk%}" style="color: black" >Klick mich</a>
 <!--                      <audio id="{{ show.name }}" preload="auto" loop="loop">-->
