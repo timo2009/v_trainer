@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-import datetime
-
+from datetime import datetime
 
 # Create your models here.
 class RadioShow(models.Model):
@@ -12,7 +11,7 @@ class RadioShow(models.Model):
     staffel = models.CharField(max_length=1000, default='', blank=True)
     deadline = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
     created = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
-
+    hide_until = models.CharField(max_length=1000, default='', blank=True)
     class Meta:
         ordering = ['-created']
 

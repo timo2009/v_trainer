@@ -6,10 +6,12 @@ from django.views.generic.list import ListView
 from django.views.generic import TemplateView
 from radioready.models import RadioShow, SongWishes
 from django.contrib.auth.mixins import LoginRequiredMixin
+from datetime import datetime
 
 
 class RadioShowListView(LoginRequiredMixin, ListView):
     model = RadioShow
+
 
 class RadioShowDetail(DetailView):
     model = RadioShow

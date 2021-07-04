@@ -22,7 +22,7 @@ Hier drei Wichtige Informationen:
                   </tr>
 
             {% for show in object_list %}
-
+                    {% if show.hide_until == "" %}
               <tr>
                   <td><h5>{{ show.staffel }}  </h5><hr></td>
                   <td><h5>{{ show.name }}  </h5><hr></td>
@@ -44,15 +44,7 @@ Hier drei Wichtige Informationen:
                                 </h5><hr></td>
                   <td><h5>{{ show.winner }}</h5><hr></td>
               </tr>
-<!--                        <script>-->
-<!--        var x = document.getElementById("{{ show.name }}");-->
-<!--        function playAudio() {-->
-<!--        x.play();-->
-<!--        }-->
-<!--        function pauseAudio() {-->
-<!--        x.pause();-->
-<!--        }-->
-<!--    </script>-->
+            {% endif %}
             {% endfor %}
                 </table>
         </table>
