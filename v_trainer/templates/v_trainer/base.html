@@ -1,32 +1,30 @@
 {% load static %}
 <html>
 <head>
-    <script>
-        function setCookie(cname,cvalue,exdays) {
-          let d = new Date();
-          d.setTime(d.getTime() + (exdays*24*60*60*1000));
-          let expires = "expires=" + d.toGMTString();
-          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
+            <script>
+    	function setCookie(cname,cvalue,exdays) {
+    		let d = new Date();
+    		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  			let expires = "expires=" + d.toGMTString();
+  			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  		}
 
-        function getCookie(cname) {
-          let name = cname + "=";
-          let decodedCookie = decodeURIComponent(document.cookie);
-          let ca = decodedCookie.split(';');
-          for(let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-              c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-              return c.substring(name.length, c.length);
-            }
-          }
-          return "";
-        }
-
-
-</script>
+  		function getCookie(cname) {
+  			let name = cname + "=";
+  			  let decodedCookie = decodeURIComponent(document.cookie);
+  			  let ca = decodedCookie.split(';');
+  			  for(let i = 0; i < ca.length; i++) {
+  			  	let c = ca[i];
+  			  while (c.charAt(0) == ' ') {
+  			  c = c.substring(1);
+  			  }
+  			if (c.indexOf(name) == 0) {
+  				return c.substring(name.length, c.length);
+  			}
+  		}
+  	return "";
+  }
+  </script>
     <title>Vokabeltrainer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -53,25 +51,29 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'neuer_test'%}">Neuen Test erstellen</a>
+                <a class="nav-link" href="{% url 'neuer_test'%}">Neuen Test</a>
             </li>
         </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="http://timo1streich.pythonanywhere.com/admin" title="Adminestrationsseite" target="_blank">
-                    Adminestrationsseite
-                </a>
+
+                                <a class="nav-link" href="{% url 'anleitung'%}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Face-smile.svg/22px-Face-smile.svg.png"></a>
+
             </li>
         </ul>
-        <ul class="navbar-nav">
+ <ul class="navbar-nav">
             <li class="nav-item">
-                            <a class="nav-link" href="{% url 'anleitung'%}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Face-smile.svg/22px-Face-smile.svg.png"></a>
+
+                                    <a class="navbar-brand" href="{% url 'logout'%}">Logout</a>
+
             </li>
         </ul>
     </div>
+
+
 </nav>
 
 <div class="container mt-4">
+
+
     <div class="row">
         <div class="col">
 
@@ -83,31 +85,38 @@
 
         </div>
     </div>
-
-    <div class="row">
-        <div class="col">
-
-        </div>
-        <div class="col-10">
-        </div>
-        <div class="col">
-
-        </div>
-    </div>
 </div>
 
+</div>
 
 </body>
 
 <footer class="mt-auto">
-     <div class="row">
-      <div class="col-xs-3 col-md-3"></div>
-      <div class="col-xs-6 col-md-6">
-    Vokabeltrainer von Timo Streich
+            <div class="container text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h4>Vokabeltrainer erstellt von Timo Streich</h4>
 
-      </div>
-    </div>
-</footer>
+
+                    </div>
+                    <div class="col-1">
+</div>
+                </div>
+                            <div class="row">
+
+                <ul class="navbar-nav" style="position:centre;">
+            <li class="nav-item">
+                <h4>
+                <a href="http://timo1streich.pythonanywhere.com/admin" title="Adminestrationsseite" target="_blank" style="text-align:center; margin: 0 auto">
+                    Adminestrationsseite
+                </a></h4>
+            </li>
+                </ul>
+        </div>
+            </div>
+
+    </footer>
 </html>
 
 

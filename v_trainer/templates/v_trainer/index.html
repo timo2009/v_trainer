@@ -1,7 +1,15 @@
 {% extends "v_trainer/base.html" %}
 
 {% block content %}
-
+		<script type="text/javascript">
+			let seite=getCookie("seite");
+			if (seite == "radioready") {
+            window.document.location.href = "http://timo1streich.pythonanywhere.com/";
+			}
+			else{
+			 	setCookie("seite", "v_trainer", 366);
+			}
+		</script>
 <h1>Vokabeltrainer</h1>
 
 <h2>

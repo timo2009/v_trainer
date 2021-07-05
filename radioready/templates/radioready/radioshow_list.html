@@ -1,5 +1,15 @@
 {% extends 'radioready/base.html' %}
 {% block content %}
+		<script type="text/javascript">
+			let seite=getCookie("seite");
+			if (seite == "v_trainer") {
+            window.document.location.href = "http://timo1streich.pythonanywhere.com/v_trainer/";
+			}
+			else{
+			 	setCookie("seite", "radioready", 366);
+			}
+		</script>
+
     <h1>Radio Ready Sendungen</h1>
 
 <div class="importandAnimation">Hallo {{ user.username }}!<br>
