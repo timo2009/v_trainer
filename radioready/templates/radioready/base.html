@@ -194,6 +194,15 @@
 <!--        Hier ist das css für mich-->
     </head>
     <body class="d-flex flex-column min-vh-100">
+    		<script type="text/javascript">
+			let seite=getCookie("seite");
+			if (seite == "v_trainer") {
+            window.document.location.href = "http://timo1streich.pythonanywhere.com/v_trainer/";
+			}
+			else{
+			 	setCookie("seite", "radioready", 366);
+			}
+		</script>
         <div class="container-fluid" >
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -240,6 +249,7 @@
                         - Radio Ready von Timo Streich und Jonathan Rieger - <br>- Webseite erstellt von Timo Streich -<br>
                         - <a class="btn btn-default" href="{% url 'newsletter' %}" role="button">Hier gehts zu unserem Newsletter</a></td> -<br>
                       - <a href="#open-modal" style="color: black">So arbeitet Radio Ready</a> -
+
 
     <div id="open-modal" class="modal-window">
       <div>
@@ -295,7 +305,17 @@ Reporter, Mann am Ton, Liedermanager, Webseiten Programmierer)
 
                     {% endif %}
 
+                    <div class="row">
 
+                <ul class="navbar-nav" style="position:centre;">
+            <li class="nav-item" style="font-size: 10px;">
+            Wir benutzen Cookies um Sie von zwei Webseiten (Radio Ready/Vokabeltrainer) auseinandergehalten werden.<br>
+                Sie können den Cookie <button onclick="setCookie('seite', 'leer', 3);alert('Der Cookie wurde gelöscht.Sie können nun auf die andere Webseite zugreifen')
+">hier</button> löschen, <br>um auf die andere Seit über ihren Link zu gelangen.
+
+            </li>
+                </ul>
+        </div>
                     </div>
                     <div class="col-1">
 </div>

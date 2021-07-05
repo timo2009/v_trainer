@@ -41,6 +41,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body  class="d-flex flex-column min-vh-100">
+		<script type="text/javascript">
+			let seite=getCookie("seite");
+			if (seite == "radioready") {
+            window.document.location.href = "http://timo1streich.pythonanywhere.com/";
+			}
+			else{
+			 	setCookie("seite", "v_trainer", 366);
+			}
+		</script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index'%}">Vokabeltest</a>
@@ -111,6 +120,16 @@
                 <a href="http://timo1streich.pythonanywhere.com/admin" title="Adminestrationsseite" target="_blank" style="text-align:center; margin: 0 auto">
                     Adminestrationsseite
                 </a></h4>
+            </li>
+                </ul>
+        </div><div class="row">
+
+                <ul class="navbar-nav" style="position:centre;">
+            <li class="nav-item" style="font-size: 10px;">
+            Wir benutzen Cookies um Sie von zwei Webseiten (Radio Ready/Vokabeltrainer) auseinandergehalten werden.<br>
+                Sie können den Cookie <button onclick="setCookie('seite', 'leer', 3);alert('Der Cookie wurde gelöscht.Sie können nun auf die andere Webseite zugreifen')
+">hier</button> löschen, <br>um auf die andere Seit über ihren Link zu gelangen.
+
             </li>
                 </ul>
         </div>
