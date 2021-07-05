@@ -10,22 +10,24 @@
 			 	setCookie("seite", "v_trainer", 366);
 			}
 		</script>
-<h1>Vokabeltrainer</h1>
 
-<h2>
+<h1 style="color: greenyellow">Vokabeltrainer</h1>
+<h2 style="color: greenyellow">                    Du bist angemeldet als {{ user.get_full_name|default:user.username }}
+</h2>
 
-    Hallo<br>
+<h2 style="color: blue">
+Hallo {{ user.username }}<br>
     Willkommen auf der Webseite.<br>
 
 
     Ich wünsche dir viel Spaß.
 </h2>
-<h3>Du bist zum ersten Mal hier?<br>
+<h3 style="color: red">Du bist zum ersten Mal hier?<br>
     Hier hast du eine
-    <a class="btn btn-default" href="{% url 'anleitung' %}" role="button">Gebrauchsanleitung</a></h3><br><br><br>
-
+    <a class="btn btn-default" style="color: red" href="{% url 'anleitung' %}" role="button">Gebrauchsanleitung</a></h3><br><br><br>
+<p style="color: green">
 Habe noch einen schönen Tag.<br><br><br>
-
+</p>
 
 {% endblock content %}
 
