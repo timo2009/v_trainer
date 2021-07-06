@@ -4,3 +4,6 @@ from .vokalbeltest_englisch_1_vokabel import EnglischTestEineVokalelCreate, Engl
 
 from .vokalbeltest_deutsch_1_vokabel import DeutschTestEineVokalelCreate, DeutschTestEineVokalelUpdate, \
     DeutschTestEineVokalelList, DeutschTestEineVokalelDetail
+
+from .vokabeltest_latein_10_vokabeln import LateinTestZehnVokalelCreate, LateinTestZehnVokalelUpdate, \
+    LateinTestZehnVokalelList, LateinTestZehnVokalelDetail

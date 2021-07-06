@@ -1,0 +1,122 @@
+{% extends "v_trainer/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<h1 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+    xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    Test Details
+</h1>
+
+
+<h4>
+    <li>Test ID: {{object.id}}</li>
+    <li>Test Durchführer: {{object.user}}</li>
+
+<hr>
+
+    {% if object.antwort_lateinisches_wort_1 != None %}
+    Dein Testwörter heißen:
+    <li>{{ object.lateinisches_wort_1 }}</li>
+    <li>{{ object.lateinisches_wort_2 }}</li>
+    <li>{{ object.lateinisches_wort_3 }}</li>
+    <li>{{ object.lateinisches_wort_4 }}</li>
+    <li>{{ object.lateinisches_wort_5 }}</li>
+    <li>{{ object.lateinisches_wort_6 }}</li>
+    <li>{{ object.lateinisches_wort_7 }}</li>
+    <li>{{ object.lateinisches_wort_8 }}</li>
+    <li>{{ object.lateinisches_wort_9 }}</li>
+    <li>{{ object.lateinisches_wort_10 }}</li>
+    <hr>
+
+        {% for wort in deutsche_woerter_1 %}
+            <li>Richtige Antworten für das erste Wort wären: {{ wort }}</li>
+        {% endfor %}
+        <li>Die Antwort "{{ object.antwort_lateinisches_wort_1 }}" ist deshalb {{ergebnis_1}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_2 %}
+            <li>Richtige Antworten für das zweite Wort wären: {{ wort }}</li>
+        {% endfor %}
+                <li>Die Antwort "{{ object.antwort_lateinisches_wort_2 }}" ist deshalb {{ergebnis_2}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_3 %}
+            <li>Richtige Antworten für das dritte Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_3 }}" ist deshalb {{ergebnis_3}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_4 %}
+            <li>Richtige Antworten für das vierte Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_4 }}" ist deshalb {{ergebnis_4}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_5 %}
+            <li>Richtige Antworten für das fünfte Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_5 }}" ist deshalb {{ergebnis_5}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_6 %}
+            <li>Richtige Antworten für das sechste Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_6 }}" ist deshalb {{ergebnis_6}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_7 %}
+            <li>Richtige Antworten für das siebte Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_7 }}" ist deshalb {{ergebnis_7}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_8 %}
+            <li>Richtige Antworten für das achte Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_8 }}" ist deshalb {{ergebnis_8}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_9 %}
+            <li>Richtige Antworten für das neunte Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_9 }}" ist deshalb {{ergebnis_9}}.</li>
+
+        <hr>
+        {% for wort in deutsche_woerter_10 %}
+            <li>Richtige Antworten für das zehnte Wort wären: {{ wort }}</li>
+        {% endfor %}
+               <li> Die Antwort "{{ object.antwort_lateinisches_wort_10 }}" ist deshalb {{ergebnis_10}}.</li>
+
+        <hr>
+            Du hast also {{punkte}} von 10 Punkten erreicht
+<br>
+    {% if punkte == 10 %}
+            Super Herzlichen Glückwunsch!!!
+
+    {% endif %}
+
+
+
+    {% endif %}
+
+</h4>
+
+
+
+
+<ul>
+
+    {% if object.antwort_lateinisches_wort_1 == None %}
+
+    <a class="btn btn-default" href="{% url 'lateintest_10_vokabel_update' object.pk%}" role="button">Starte
+        Test</a><br>
+
+
+    {% endif %}
+
+    <a class="btn btn-default" href="{% url 'lateintest_10_vokabel_list'%}" role="button">Zurück</a><br>
+
+</ul>
+
+{% endblock content %}

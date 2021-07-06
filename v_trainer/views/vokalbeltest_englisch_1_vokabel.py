@@ -50,6 +50,7 @@ class EnglischTestEineVokalelDetail(DetailView):
 
 
         context['ergebnis'] = ergebnis
+
         if ergebnis == "richtig":
             context['preis'] = 1
 
