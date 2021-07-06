@@ -111,12 +111,12 @@ class LateinTestZehnVokalelDetail(DetailView):
             context['ergebnis_3'] = ergebnis_3
 
         for wort in lateinisches_wort_4.dwort.all():
-
+            ergebnis="falsch"
             if wort.wort == self.object.antwort_lateinisches_wort_4:
-                ergebnis_4 = 'richtig'
+                ergebnis = 'richtig'
                 punkte = punkte+1
 
-            context['ergebnis_4'] = ergebnis_4
+            context['ergebnis'] = ergebnis
 
 
         for wort in lateinisches_wort_5.dwort.all():
