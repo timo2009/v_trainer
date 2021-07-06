@@ -114,7 +114,7 @@ class LateinTestZehnVokalelDetail(DetailView):
 
             if wort.wort == self.object.antwort_lateinisches_wort_4:
                 ergebnis_4 = 'richtig'
-                punkte=punkte+1
+                punkte = punkte+1
 
             context['ergebnis_4'] = ergebnis_4
 
