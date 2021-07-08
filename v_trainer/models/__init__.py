@@ -5,3 +5,5 @@ from .lateinischeswort import LateinischesWort
 from .englischtest_1_vokabel import EnglischTestEineVokalel
 from .deutschtest_1_vokabel import DeutschTestEineVokalel
 from .lateintest_10_vokabeln import LateinTestZehnVokalel
+from .englischtest_10_vokabel import EnglischTestZehnVokalel
+

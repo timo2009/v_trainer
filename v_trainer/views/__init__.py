@@ -7,3 +7,6 @@ from .vokalbeltest_deutsch_1_vokabel import DeutschTestEineVokalelCreate, Deutsc
 
 from .vokabeltest_latein_10_vokabeln import LateinTestZehnVokalelCreate, LateinTestZehnVokalelUpdate, \
     LateinTestZehnVokalelList, LateinTestZehnVokalelDetail
+
+from .vokabeltest_englisch_10_vokabeln import EnglischTestZehnVokalelCreate, EnglischTestZehnVokalelUpdate, \
+    EnglischTestZehnVokalelList, EnglischTestZehnVokalelDetail

@@ -1,0 +1,25 @@
+{% extends "v_trainer/base.html" %}
+
+{% block content %}
+
+<h1>Englisch Teste mit zehn Vokabel</h1>
+
+<ul>
+    {% for test in object_list %}
+    <li>Der Test mit der ID {{test.id}} hat den Durchführer {{ test.user }} -->
+        {% if test.antwort_englisches_wort_1 == None %}
+        <a class="btn btn-default" href="{% url 'englischtest_10_vokabel_detail' test.pk %}" role="button">Details des
+            Tests</a><br>
+        {% endif %}
+        {% if test.antwort_englisches_wort_1 != None %}
+            <a class="btn btn-default" href="{% url 'englischtest_10_vokabel_detail' test.pk %}" role="button">Details des
+        Durchgeführten Tests</a><br>
+
+    {% endif %}
+
+
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}

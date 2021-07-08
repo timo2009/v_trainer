@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from v_trainer.models import DeutschesWort, EnglischesWort, EnglischTestEineVokalel, DeutschTestEineVokalel, LateinTestZehnVokalel, LateinischesWort
+from v_trainer.models import DeutschesWort, EnglischesWort, EnglischTestEineVokalel, DeutschTestEineVokalel, LateinTestZehnVokalel, LateinischesWort, EnglischTestZehnVokalel
 
 admin.site.register(DeutschesWort)
 admin.site.register(EnglischesWort)
@@ -17,6 +17,10 @@ class EnglischTest(admin.ModelAdmin):
     list_display = ("id", "user", "deutsches_wort_1")\
 
 @admin.register(LateinTestZehnVokalel)
-class EnglischTest(admin.ModelAdmin):
+class LateinTest(admin.ModelAdmin):
     list_display = ("id", "user", "lateinisches_wort_1", "lateinisches_wort_2", "lateinisches_wort_3", "lateinisches_wort_4", "lateinisches_wort_5", "lateinisches_wort_6", "lateinisches_wort_7", "lateinisches_wort_8", "lateinisches_wort_9", "lateinisches_wort_10")
+
+@admin.register(EnglischTestZehnVokalel)
+class EnglischTest(admin.ModelAdmin):
+    list_display = ("id", "user", "englisches_wort_1", "englisches_wort_2", "englisches_wort_3", "englisches_wort_4", "englisches_wort_5", "englisches_wort_6", "englisches_wort_7", "englisches_wort_8", "englisches_wort_9", "englisches_wort_10")
 
