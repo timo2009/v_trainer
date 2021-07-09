@@ -10,3 +10,6 @@ from .vokabeltest_latein_10_vokabeln import LateinTestZehnVokalelCreate, LateinT
 
 from .vokabeltest_englisch_10_vokabeln import EnglischTestZehnVokalelCreate, EnglischTestZehnVokalelUpdate, \
     EnglischTestZehnVokalelList, EnglischTestZehnVokalelDetail
+
+from .vokalbeltest_deutsch_10_vokabel import DeutschTestZehnVokaleDetail, DeutschTestZehnVokaleUpdate, \
+    DeutschTestZehnVokalelCreate, DeutschTestZehnVokaleList

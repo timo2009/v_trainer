@@ -1,0 +1,105 @@
+{% extends "v_trainer/base.html" %}
+
+{% block content %}
+<h1>
+    Test Details
+</h1>
+
+
+<h4>
+    <li>Test ID: {{object.id}}</li>
+    <li>Test Durchführer: {{object.user}}</li>
+
+
+
+    {% if object.antwort_auf_deutsches_wort_1 != None %}
+
+        <hr>
+Richtige Antworten für {{ object.deutsches_wort_1 }} wären:
+        {% for wort in englische_woerter_1 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_1 }}" ist deshalb {{ergebnis1}}.</li>
+        <hr>
+ Richtige Antworten für {{ object.deutsches_wort_2 }} wären:
+        {% for wort in moeglische_englischen_antworten_2 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_2 }}" ist deshalb {{ergebnis2}}.</li>
+        <hr>
+   Richtige Antworten für {{ object.deutsches_wort_3 }} wären:
+        {% for wort in moeglische_englischen_antworten_3 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_3 }}" ist deshalb {{ergebnis3}}.</li>
+        <hr>
+    Richtige Antworten für {{ object.deutsches_wort_4 }} wären:
+        {% for wort in moeglische_englischen_antworten_4 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_4 }}" ist deshalb {{ergebnis4}}.</li>
+        <hr>
+Richtige Antworten für {{ object.deutsches_wort_5 }} wären:
+        {% for wort in moeglische_englischen_antworten_5 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_5 }}" ist deshalb {{ergebnis5}}.</li>
+        <hr>
+   Richtige Antworten für {{ object.deutsches_wort_6 }} wären:
+        {% for wort in moeglische_englischen_antworten_6 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_6 }}" ist deshalb {{ergebnis6}}.</li>
+        <hr>
+ Richtige Antworten für {{ deutsches_wort_7 }} wären:
+        {% for wort in moeglische_englischen_antworten_7 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_7 }}" ist deshalb {{ergebnis7}}.</li>
+        <hr>
+    Richtige Antworten für {{ deutsches_wort_8 }} wären:
+        {% for wort in moeglische_englischen_antworten_8 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_8 }}" ist deshalb {{ergebnis8}}.</li>
+        <hr>
+    Richtige Antworten für {{ deutsches_wort_9 }} wären:
+        {% for wort in moeglische_englischen_antworten_9 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_9 }}" ist deshalb {{ergebnis9}}.</li>
+        <hr>
+ Richtige Antworten für {{ object.deutsches_wort_10 }} wären:
+        {% for wort in moeglische_englischen_antworten_10 %}
+        <li> {{ wort }}</li>
+        {% endfor %}
+            <li>Die Antwort "{{ antwort_deutsches_wort_10 }}" ist deshalb {{ergebnis10}}.</li>
+
+<hr>
+            Du hast also {{punkte}} von 10 Punkten erreicht
+<br>
+    {% if punkte == 10 %}
+            Super Herzlichen Glückwunsch!!!
+
+    {% endif %}
+
+    {% endif %}
+
+</h4>
+
+<ul>
+
+    {% if object.antwort_auf_deutsches_wort_1 == None %}
+
+    <a class="btn btn-default" href="{% url 'deutschtest_10_vokabel_update' object.pk%}" role="button">Starte
+        Test</a><br>
+
+
+    {% endif %}
+
+    <a class="btn btn-default" href="{% url 'deutschtest_10_vokabel_list'%}" role="button">Zurück</a><br>
+
+</ul>
+
+
+{% endblock content %}
