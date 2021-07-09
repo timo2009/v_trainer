@@ -2,7 +2,6 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from v_trainer.models.deutschtest_10_vokabel import DeutschTestZehnVokalel
-from v_trainer.models import EnglischTestEineVokalel, DeutschesWort, EnglischesWort
 from django.urls import reverse_lazy
 from django.utils import timezone
 
