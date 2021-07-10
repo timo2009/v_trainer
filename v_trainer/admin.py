@@ -9,7 +9,7 @@ admin.site.register(LateinischesWort)
 
 @admin.register(LateinTestZehnVokalel)
 class LateinTest(admin.ModelAdmin):
-    list_display = ("id", "user", "lateinisches_wort_1", "lateinisches_wort_2", "lateinisches_wort_3", "lateinisches_wort_4", "lateinisches_wort_5", "lateinisches_wort_6", "lateinisches_wort_7", "lateinisches_wort_8", "lateinisches_wort_9", "lateinisches_wort_10")
+    list_display = ("id", "user", "creator", "lateinisches_wort_1", "lateinisches_wort_2", "lateinisches_wort_3", "lateinisches_wort_4", "lateinisches_wort_5", "lateinisches_wort_6", "lateinisches_wort_7", "lateinisches_wort_8", "lateinisches_wort_9", "lateinisches_wort_10")
 
 @admin.register(EnglischTestZehnVokalel)
 class EnglischTest(admin.ModelAdmin):

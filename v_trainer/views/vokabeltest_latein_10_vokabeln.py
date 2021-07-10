@@ -11,6 +11,10 @@ class LateinTestZehnVokalelCreate(CreateView):
     model = LateinTestZehnVokalel
     fields = ['user', 'lateinisches_wort_1', 'lateinisches_wort_2', 'lateinisches_wort_3', 'lateinisches_wort_4', 'lateinisches_wort_5', 'lateinisches_wort_6', 'lateinisches_wort_7', 'lateinisches_wort_8', 'lateinisches_wort_9', 'lateinisches_wort_10']
     success_url = reverse_lazy('lateintest_10_vokabel_list')
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.creator = self.request.user
+        return super(LateinTestZehnVokalelCreate, self).form_valid(form)
 
 
 

@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 
 class LateinTestZehnVokalel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name="creator")
+
     lateinisches_wort_1 = models.ForeignKey(v_models.LateinischesWort, related_name='latein_test_wort_1',
 
                                           on_delete=models.PROTECT, verbose_name='Zu übersetzendes Wort 1')
@@ -45,3 +47,8 @@ class LateinTestZehnVokalel(models.Model):
     lateinisches_wort_10 = models.ForeignKey(v_models.LateinischesWort, related_name='latein_test_wort_10',
                                           on_delete=models.PROTECT, verbose_name='Zu übersetzendes Wort 10')
     antwort_lateinisches_wort_10 = models.CharField(null=True, blank=True, max_length=120, verbose_name='Übersetzung zu Wort 10')
+
+    def save_model(self, request, obj, form, change):
+        if getattr(obj, 'user', None) is None:
+            obj.creator = request.user
+        obj.save()
