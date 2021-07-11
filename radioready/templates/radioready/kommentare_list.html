@@ -1,0 +1,36 @@
+{% extends 'radioready/base.html' %}
+{% block content %}
+		<script type="text/javascript">
+			let seite=getCookie("seite");
+			if (seite == "v_trainer") {
+            window.document.location.href = "http://timo1streich.pythonanywhere.com/v_trainer/";
+			}
+			else{
+			 	setCookie("seite", "radioready", 366);
+			}
+		</script>
+
+    <h1>Radio Ready Kommentare</h1>
+
+Hallo {{ user.username }}!<br>lass uns doch mal einen Kommentar da.<br>
+<a href="{% url 'kommentar_create' %}">Klick mich dafür.</a>
+<hr>
+Hier sind die Kommentare für Radio Ready:<br>
+{% for kommentar in object_list %}
+{{kommentar.creator}} hat folgenden Kommentar hinderlassen:<br>
+{{kommentar.kommentar}}<br>
+{% if kommentar.kommentar_antwort == "" %}
+{% if user.username == "Timo" %}
+<a href="{% url 'kommentar_update' kommentar.pk%}">Kommentar beantworten</a>
+{% endif %}
+{% if user.username == "Jonathan" %}
+<a href="{% url 'kommentar_update' kommentar.pk%}">Kommentar beantworten</a>
+{% endif %}
+{% endif %}
+{% if kommentar.kommentar_antwort != "" %}
+Darauf hat das Radio Ready Team geantwortet:<br>
+{{kommentar.kommentar_antwort}}
+{% endif %}
+<hr>
+{% endfor %}
+{% endblock content %}

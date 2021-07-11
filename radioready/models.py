@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 # Create your models here.
+import radioready
+
+
 class RadioShow(models.Model):
     name = models.CharField(max_length=100, default='')
     link_to_radio_show = models.URLField()
@@ -33,20 +36,9 @@ class SongWishes(models.Model):
     class Meta:
         ordering = ['-created']
 
+class Kommentare(models.Model):
+    kommentar = models.TextField(max_length=1000, default='', blank=True, verbose_name="Dein Kommentar:")
+    kommentar_antwort = models.TextField(max_length=1000, default='', blank=True, verbose_name="Die Antwort zu dem Kommentar:")
+    creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 
-# Hier ist die Lösungs Möglichkeit zum Quiz
-# class QuizAnswer(models.Model):
-#     creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-#     shows = models.ManyToManyField(RadioShow, related_name='list_of_shows')
-#     answer = models.TextField(max_length=1000, default='', blank=True)
-#     solution1 = models.TextField(max_length=1000, null=True, blank=True)
-#     solution2 = models.TextField(max_length=1000, null=True, blank=True)
-#     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-#
-#     def save_model(self, request, obj, form, change):
-#         if getattr(obj, 'user', None) is None:
-#             obj.creator = request.user
-#         obj.save()
-#
-#     class Meta:
-#         ordering = ['-created']
+

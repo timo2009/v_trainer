@@ -1,0 +1,38 @@
+{% extends 'radioready/base.html' %}
+{% block content %}
+		<script type="text/javascript">
+			let seite=getCookie("seite");
+			if (seite == "v_trainer") {
+            window.document.location.href = "http://timo1streich.pythonanywhere.com/v_trainer/";
+			}
+			else{
+			 	setCookie("seite", "radioready", 366);
+			}
+		</script>
+
+    <h1>Radio Ready Umfragen</h1>
+
+{% if user.username =="Timo" %}
+<h2>Umfrage erstellen:</h2>
+<a href="{% url 'radioumfrage_create'%}" role="button" style="color: black">Klick mich</a>
+<br>
+Umfrage Antwort erstellen(Bitte zuerst machen!)
+<a href="{% url 'umfrageantworten_create'%}" role="button" style="color: black">Klick mich</a>
+<br>
+{% endif %}
+
+{% if user.username =="Jonathan" %}
+<h2>Umfrage erstellen:</h2>
+<a href="{% url 'radioumfrage_create'%}" role="button" style="color: black">Klick mich</a>
+<br>
+Umfrage Antwort erstellen(Bitte zuerst machen!)
+<a href="{% url 'umfrageantworten_create'%}" role="button" style="color: black">Klick mich</a>
+<br>
+{% endif %}
+<h2>Hier sihst du die Aktuellen Umfragen:</h2>
+            {% for show in object_list %}
+                    {{ show.staffel }}
+            {% endfor %}
+
+
+{% endblock content %}

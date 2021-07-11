@@ -9,6 +9,10 @@ urlpatterns = [
     path('songwishes/create/', SongWishesCreate.as_view(), name='songwishes_create'),
     path('songwishes', SongWishesList.as_view(), name='songwishes_list'),
     path('radioshow/detail/<pk>/', RadioShowDetail.as_view(), name='radioshow_detail'),
-    path('style', StyleCss.as_view(), name='style')
+    path('style', StyleCss.as_view(), name='style'),
+
+    path('kommentar/create/', KommentareCreate.as_view(), name='kommentar_create'),
+    path('kommentar/update/<pk>', KommentareUpdate.as_view(), name='kommentar_update'),
+    path('kommentare', KommentareList.as_view(), name='kommentare_list'),
 
 ]
