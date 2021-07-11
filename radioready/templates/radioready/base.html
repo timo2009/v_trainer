@@ -203,6 +203,57 @@ body {
 
 }
 </style>
+        <style>
+          .modalDialog {
+ position: Fixed;
+ font-family: Verdana, Sans-Serif;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background-color: rgba(0, 0, 0, 0.6);
+ z-index: 99999;
+ opacity: 0;
+ transition: opacity 400ms ease-in;
+ pointer-events: None;
+}
+
+.modalDialog:target {
+ opacity: 1;
+ pointer-events: Auto;
+}
+
+.modalDialog > div {
+ width: 400px;
+ position: relative;
+ margin: 10% Auto;
+ padding: 5px 20px 13px 20px;
+ border-radius: 10px;
+ background-color: #FFFFFF;
+ background: linear-gradient(#FFFFFF, #999999);
+ cursor: Default;
+}
+
+.close {
+ background-color: #606061;
+ color: #FFFFFF;
+ line-height: 25px;
+ position: Absolute;
+ right: -12px;
+ text-align: Center;
+ top: -10px;
+ width: 24px;
+ text-decoration: None;
+ font-weight: Bold;
+ border-radius: 12px;
+ box-shadow: 1px 1px 3px #000000;
+}
+
+.close:hover {
+ background-color: #00D9FF;
+}
+
+        </style>
 <!--        Hier ist das css für mich-->
     </head>
     <body class="d-flex flex-column min-vh-100" style="background-color: greenyellow;">
@@ -214,7 +265,36 @@ body {
 			else{
 			 	setCookie("seite", "radioready", 366);
 			}
+
 		</script>
+<script>
+let datenschutz_nutzer=getCookie("datenschutz_nutzer")
+			if (datenschutz_nutzer==""){
+                 window.location.href="#openModal";
+                 									 	setCookie("datenschutz_nutzer", "datenschutz_nutzer", 366);
+
+
+			}
+
+</script>
+            <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+
+
+     </div>
+
+</div>
+<div id="openModal" class="modalDialog">
+ <div>
+  Bitte Aktzeptieren Sie die <a class="btn btn-default" href="{% url 'daten_und_nutzer' %}" role="button">Datenschutzerklärungen/Nutzerbedingungen</a>
+            <a href="#close">Aktzeptieren</a>
+
+ </div>
+</div>
+
         <div class="container-fluid" >
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
