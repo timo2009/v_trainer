@@ -37,7 +37,7 @@ class SongWishes(models.Model):
         ordering = ['-created']
 
 class Kommentare(models.Model):
-    kommentar = models.TextField(max_length=1000, default='', blank=True, verbose_name="Dein Kommentar:")
+    kommentar = models.TextField(max_length=1000, verbose_name="Dein Kommentar:")
     kommentar_antwort = models.TextField(max_length=1000, default='', blank=True, verbose_name="Die Antwort zu dem Kommentar:")
     creator = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 
