@@ -24,6 +24,7 @@ urlpatterns = [
 	path('deutschtest_10_vokabel/list/', DeutschTestZehnVokaleList.as_view(), name='deutschtest_10_vokabel_list'),
 
 	path('vokabeltestliste/', vokabeltestliste.as_view(), name='vokabeltestliste'),
+	path('Vokabeltrainer_datenschutz/', NutzerDaten.as_view(), name='Vokabeltrainer_datenschutz'),
 	path('anleitung/', anleitung.as_view(), name='anleitung'),
 	path('neuer_test/', listView.as_view(), name='neuer_test')
 ]

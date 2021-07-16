@@ -587,6 +587,13 @@ body {
 			}
 
 		</script>
+            <div id="openModal" class="modalDialog">
+ <div>
+  Bitte akzeptiere die <a class="btn btn-default" target="_blank" href="{% url 'daten_und_nutzer' %}" role="button">Datenschutzerklärungen/Nutzerbedingungen</a>
+            <a href="#close">akzeptieren</a>
+
+ </div>
+</div>
 <script>
 let datenschutz_nutzer=getCookie("datenschutz_nutzer")
 			if (datenschutz_nutzer==""){
@@ -608,13 +615,7 @@ let datenschutz_nutzer=getCookie("datenschutz_nutzer")
      </div>
 
 </div>
-<div id="openModal" class="modalDialog">
- <div>
-  Bitte akzeptiere die <a class="btn btn-default" href="{% url 'daten_und_nutzer' %}" role="button">Datenschutzerklärungen/Nutzerbedingungen</a>
-            <a href="#close">akzeptieren</a>
 
- </div>
-</div>
 
         <div class="container-fluid" >
             <nav class="navbar navbar-expand-lg navbar-light bg-light">

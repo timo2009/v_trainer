@@ -17,5 +17,8 @@ class vokabeltestliste(TemplateView):
 class RadioReady(TemplateView):
     template_name = "v_trainer/radio_ready.html"
 
+class NutzerDaten(TemplateView):
+    template_name = "v_trainer/daten_nutzer.html"
+
 
 

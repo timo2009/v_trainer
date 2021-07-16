@@ -1,4 +1,4 @@
-from .views import IndexView, anleitung, vokabeltestliste, listView, RadioReady
+from .views import IndexView, anleitung, vokabeltestliste, listView, RadioReady, NutzerDaten
 
 from .vokabeltest_latein_10_vokabeln import LateinTestZehnVokalelCreate, LateinTestZehnVokalelUpdate, \
     LateinTestZehnVokalelList, LateinTestZehnVokalelDetail

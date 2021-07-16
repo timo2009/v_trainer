@@ -47,7 +47,7 @@ const audioPlayer = document.querySelector(".audio-player");
 const audio = new Audio(
   "{{ object.link_to_radio_show }}"
 );
-
+{{ object.link_to_radio_show }}.play()
 console.dir(audio);
 
 audio.addEventListener(
@@ -84,6 +84,7 @@ setInterval(() => {
   progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
   audioPlayer.querySelector(".time .current").textContent = getTimeCodeFromNum(
     audio.currentTime
+
   );
 }, 500);
 
@@ -130,6 +131,7 @@ function getTimeCodeFromNum(num) {
     seconds % 60
   ).padStart(2, 0)}`;
 }
+
 </script>
     <br><br> <br>                       <div class="element"></div><br><br>
 
